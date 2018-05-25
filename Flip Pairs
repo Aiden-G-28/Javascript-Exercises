@@ -1,0 +1,32 @@
+/*
+Flip every pair of characters in a string.
+
+example:
+
+Input = check out how interesting this problem is, it's insanely interesting!
+
+Output = hcce kuo toh wnietertsni ghtsip orlbmei ,si 't sniasenyli tnreseitgn!
+
+
+*/
+
+function flipPairs(input){
+  var start = input;
+  var final = [];
+  for(i=0;i<=start.length;i++){
+    if(i % 2 === 0){
+      var flip = start[i+1];
+      final.push(flip);
+    }
+    else{
+      var flip2 = start[i-1];
+      final.push(flip2);
+    }
+  }
+  return final.join("");
+}
+var input = 'check out how interesting this problem is, it\'s insanely interesting!';
+
+var output = flipPairs(input);
+
+console.log(output);
