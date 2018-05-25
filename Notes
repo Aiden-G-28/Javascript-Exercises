@@ -1,0 +1,56 @@
+
+/* 
+Multi-Line Comments
+*/
+
+// String Methods
+var dough = "dough boy";
+console.log(dough.toUpperCase()); // Upper Case
+console.log(dough.split(" ")); // Splits up into Array by " "  REMOVES THE SPLIT
+console.log(dough.split("")); // Splits up into Array by ""
+console.log(dough.split("o")); // Splits up into Array by "o"
+console.log(dough.charAt(2)); // Prints letter at 2 [0,1,2,3,4...]
+
+console.log('------------------------------------------------------------------');
+
+// Objects
+var person = {name:"Kim",age:88};
+console.log(person);
+console.log(person.name); // Only prints what property name is in var person
+
+// Add Properties to Object
+person.title = 'Mrs.';
+person.gender = 'female';
+console.log(person); // Adds new property to var person
+
+// Modify Properties
+person.name = 'Kimberly'; 
+console.log(person); // Changes property name
+
+// Deleting Properties
+delete person.title;
+console.log(person); // Removes property title from var person
+
+// Comparing Properties
+console.log(person.name.length > person.gender.length); // Compares the length of
+// name and length of gender
+
+console.log('------------------------------------------------------------------');
+
+// Array of Objects
+var people = [  // Can be in one line or several (Whats in-between [])
+  {name:'Kim',age:88},
+  {name:'Bill',age:78},
+  {name:'Bob',age:98},
+  {name:'George',age:18}
+  ];
+console.log(people);
+console.log(people[1]); //prints 1 in array (0,1,2...)=(Kim,Bill,Bob...)
+// For loop to print only name property of variables in people
+for(var x in people){
+  console.log(people[x].name);
+}
+// Or could be done as...
+for(i=0;i<people.length;i++){
+  console.log(people[i].name);
+}
