@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+  
+<canvas id="Clock_Canvas" width=400
+height=200 style="background: url('https://www.planwallpaper.com/static/images/9Zk2kcY.jpg')"></canvas>
+<script>
+var canvas = document.getElementById("Clock_Canvas")
+var pen = canvas.getContext("2d");
+pen.font="30px Garamond";
+pen.fillStyle="Red";
+pen.textAlign="center";
+pen.textBaseline="middle";
+
+setInterval(drawTime(pen),1000);
+
+function drawTime(pen){
+  var now = new Date();
+  var date = now.getDate();
+  var year = now.getFullYear();
+  
+  var month = now.getMonth();
+  var month_name = ["January","February","March",
+  "April","May","June","July","August","September",
+  "October","November","December",];
+  
+  var days = now.getDay();
+  var day_name = ["Sunday","Monday","Tuesday",
+  "Wednesday","Thursday","Friday","Saturday"];
+  
+  var hour = now.getHours();
+  var m = "";
+  if(hour <= 12){
+    m = "am";
+  }
+  else if(hour > 12){
+    m = "pm"
+  }
+  //hour = hour % 12;
+  
+  var minute = now.getMinutes();
+  // this adds a zero to the front if it’s a 1-9
+  minute = minute > 9 ? minute : '0' + minute;
+  var second = now.getSeconds();
+  
+  
+  pen.fillText(day_name[days.toString()]+", "+month_name[month.toString()]+" "+date.toString()+", "+year.toString(), 200,50)
+  pen.fillText(hour.toString()+":"+minute.toString()+" "+m
+  ,200,130)
+}
+drawTime(pen);
+
+</script>
+
+</body>
+</html>
