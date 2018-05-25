@@ -1,0 +1,138 @@
+// Website for more information on Regex:
+// https://www.w3schools.com/jsref/jsref_obj_regexp.asp
+
+/*
+Intro:
+Complete the following and name your functions accordingly:
+1. create a Regular Expression to test whether a 5 digit zipcode is valid or not. (check that it's numbers only)
+function zipCode(str)
+
+2. create a Regular Expression to check if there's a whitespace in a string
+function whiteSpace(str)
+
+3. Check if a social security number is valid. The format for a SSN is  
+XXX-XX-XXXX
+function socialSecurityNumber(str)
+*/
+
+// 1
+function zipCode(str){
+  var num_re = /^\d{5}$/;
+  var x = num_re.test(str);
+  
+  return x;
+}
+console.log(zipCode("12345"));
+
+// 2
+function whiteSpace(str){
+  var ws_re = / /;
+  var x = ws_re.test(str);
+  
+  return x;
+}
+console.log(whiteSpace("aiden green"));
+
+// 3
+function socialSecurityNumber(str){
+  var re = /\d{3}-\d{2}-\d{4}/;
+  var x = re.test(str);
+  
+  return x;
+}
+console.log(socialSecurityNumber('123-45-6789'));
+
+
+
+/*
+Problem 1:
+Create a  RegEx function for a username. The username must contain the first name, an underscore and the year they were born. 
+(check that the first part is a string, then check for underscore and then numbers.)
+
+Example:
+George Martin  born in 1968.
+
+TEST THIS:
+george_68
+
+Use the following function name.
+function userName(str)
+*/
+
+// Problem 1
+function userName(str){
+  var re = /^[a-z]+_\d{2}$/i; // , \w = find word character \d = find number/digit
+  var x = re.test(str);
+  
+  return x;
+}
+console.log(userName("george_68"));
+
+
+
+/*
+Problem 2:
+Create a  RegEx function that searches for a price and outputs the data.
+
+Example:
+The raspberry pi cost $35 at the store.
+
+Output:
+$35
+
+Use the following function name.
+function searchPrice(str)
+*/
+
+// Problem 2
+function searchPrice(str){
+  var re = /\$\d+/; // \n+ = all string that matches n
+  var x = re.exec(str);
+  
+  return x.toString();
+}
+console.log(searchPrice("The raspberry pi cost $35 at the store."));
+
+
+
+/*
+Problem 3:
+Write a JavaScript function to count the number of vowels in a given string using a regular expression. DO NOT USE loops or if statements
+(Hint: use exec or match and look at the modifiers on the website below)
+
+use the name:
+function countVowels
+*/
+
+// Problem 3
+function countVowels(str){
+  var re = /[aeiou]/g;
+  var x = str.match(re);
+  var y = x.length;
+  
+  return y;
+}
+console.log(countVowels("Hello World"));
+
+
+
+/*
+Problem 4:
+Write a JavaScript function to test if the words: dog, cat, or chicken is in a string.
+
+(Hint: you will need to use \b for a word boundary)
+
+Simply put: \b allows you to perform a "whole words only" search using a regular expression in the form of \bword\b.  A "word character" is a character that can be used to form words. All  characters that are not "word characters" are "non-word characters" 
+
+use the name:
+function animalCount
+*/
+
+// Problem 4
+function animalCount(str){
+  var re = /\b(dog|cat|chicken)\b/;
+  var x = re.test(str);
+  
+  return x;
+}
+console.log(animalCount("I want a cat"));
