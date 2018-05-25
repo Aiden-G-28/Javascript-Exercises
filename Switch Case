@@ -1,0 +1,26 @@
+/*
+Problem
+Finish the switch statement. Add the following cases: BMW, Ford and Peugeot. 
+Set the value of the variable text to: "German car" for BMW. "American car" for Ford. "French car" for  Peugeot. 
+Also add a default case where the text value is "Unknown car name". 
+*/
+
+
+function checkCar() {
+  var text;
+  var favCar = prompt("input a car");
+
+  switch(favCar) {
+    case "BMW":
+      text = "German Car";
+      break;
+    case "Ford":
+      text = "American Car";
+      break;
+    case "Peugeot":
+      text = "French Car";
+      break;
+  }
+  return text;
+}
+checkCar();
