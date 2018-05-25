@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+<canvas id ="My_Canvas" width=200
+height=200 style='border:1px solid #000000;'>
+</canvas>
+<script>
+//Sets Canvas and Pen
+var canvas = document.getElementById("My_Canvas");
+var pen = canvas.getContext("2d"); //Used to Draw 2D objects in the Canvas
+
+//Draw a Line
+pen.moveTo(0,0);
+pen.lineTo(200,200);
+pen.stroke();
+
+//Draw Quadratic Curve
+pen.beginPath();
+pen.moveTo(0,200);
+pen.quadraticCurveTo(200, 100, 200, 0); // controlx, controly,
+pen.stroke();                       //  endpointx, endpointy
+//Draw a Circle
+pen.beginPath();
+pen.arc(100, 100, 50, 0, 2*Math.PI); // x, y, radius,
+pen.stroke();                        // start of arc, end of arc
+
+//Change Fill Color
+pen.fillStyle = "#558c43"
+
+//Draw Text 
+pen.font = "30px Arial";
+pen.fillText("Hello World", 20, 40) // Text, X-axis, Y-axis
+
+//Draw Linear Gradient
+var grd = pen.createLinearGradient(0,0, 200,0);
+grd.addColorStop(0, "green")
+grd.addColorStop(1, "purple")
+
+//Change Fill Color
+pen.fillStyle = grd;
+
+//Draw Rectangle
+pen.fillRect(0, 160, 200, 40);
+// x,y TopLeftCorner , x,y BottomRightCorner
+</script>
+</body>
+</html>
