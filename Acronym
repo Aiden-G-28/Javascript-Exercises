@@ -1,0 +1,19 @@
+/*
+Convert a phrase to its acronym.
+
+Techies love their TLA (Three Letter Acronyms)!
+
+Help generate some jargon by writing a program that converts a long name like Portable Network Graphics to its acronym (PNG).
+*/
+
+function acronymMaker(str){
+  var list = [];
+  
+  for(var x in str.split(' ')){
+    list.push(str.split(' ')[x]);
+  }
+  return (list[0].charAt(0) + list[1].charAt(0) + list[2].charAt(0));
+}
+
+output = acronymMaker("Portable Network Graphics");
+console.log(output); // ---> PNG
