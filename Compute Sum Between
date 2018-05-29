@@ -1,0 +1,31 @@
+/*
+Write a function called "computeSumBetween".
+
+Given 2 integers, "computeSumBetween" returns the sum between the two given integers, beginning at num1, and excluding num2.
+
+Notes:
+* The sum between 1 and 4 is 1 + 2 + 3 = 6.
+* If num2 is not greater than num1, it should return 0.
+
+*/
+
+function computeSumBetween(num1, num2) {
+  // your code here
+  if(num1 > num2){
+    return 0;
+  }
+  var a = num1;
+  var a_list = [];
+  
+  while (a < num2){
+    a_list.push(a);
+    a += 1;
+  }
+    var sum = 0;
+for (var i = 0; i < a_list.length; i++) {
+  sum += a_list[i];
+}
+  return sum;
+}
+var output = computeSumBetween(2, 5);
+console.log(output); // --> 9
